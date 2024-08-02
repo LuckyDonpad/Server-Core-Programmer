@@ -12,12 +12,12 @@ def generate(len: int) -> list:
 
 
 results = {}
-sort_fun = [insertion_sort, heap_sort, quick_sort, merge_sort, bubble_sort, selection_sort, tim_sort]
+sort_fun = [quick_sort, sorted]
 for foo in sort_fun:
     results[foo.__name__] = {'n_elements': [], 'time': []}
 
 for foo in sort_fun:
-    for i in range(100, 3001, 100):
+    for i in range(100, 5001, 100):
         test_array = generate(i)
         begin = timeit.default_timer()
         if foo is quick_sort or foo is merge_sort:
